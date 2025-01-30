@@ -12,16 +12,17 @@ pipeline {
         stage('Run Tests') {
             steps {
                 sh 'git pull origin main'
-                sh 'pytest --junitxml=test-results.xml'
-                bat 'dir'
-                bat 'type test-results.xml'
+                sh 'mkdir -p reports'  // Create the reports directory
+                sh 'pytest --junitxml=reports/test-results.xml'
+                bat 'dir reports'
+                bat 'type reports\\test-results.xml'
             }
         }
     }
 
     post {
         always {
-            junit 'test-results.xml'
+            junit 'reports/test-results.xml'
         }
     }
 }
