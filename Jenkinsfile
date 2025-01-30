@@ -5,6 +5,8 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh 'pip install -r requirements.txt'
+                sh 'pip install pytest'  // Ensure pytest is installed
+
             }
         }
         stage('Run Tests') {
