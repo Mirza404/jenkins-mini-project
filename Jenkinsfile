@@ -9,7 +9,8 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                sh 'pytest'
+                sh 'pytest --junitxml=test-results.xml'
+
             }
         }
     }
