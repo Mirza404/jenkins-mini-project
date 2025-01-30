@@ -9,8 +9,10 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
+                sh 'git pull origin main'
                 sh 'pytest --junitxml=test-results.xml'
-
+                bat 'dir'
+                bat 'type test-results.xml'
             }
         }
     }
