@@ -1,6 +1,6 @@
 # JENKINS MINI PROJECT - BASIC PYTHON CALCULATOR
 
-# Introduction 
+## Introduction 
 <hr>
 A small project built in order to demonstrate and apply my understanding of version control using Git and automate testing workflows using Jenkins.
 
@@ -8,7 +8,7 @@ A small project built in order to demonstrate and apply my understanding of vers
 ## Table of Contents
 - [Introduction](#introduction)
 - [Project Setup](#project-setup)
-- [Running the Application](#running-the-application)
+- [Running Jenkins](#running-jenkins)
 - [Testing the Application](#testing-the-application)
 - [Jenkins Integration](#jenkins-integration)
 - [Conclusion](#conclusion)
@@ -45,6 +45,15 @@ When it comes to installation, at one point a choice is presented:
 The former is a less safe, but simpler choice, while the latter is safer, but more complicated to set up.
 
 *I will not go in-depth in Jenkins setup explanation, because there are a lot of materials covering it step-by-step on the net.* 
+
+To start Jenkins in CLI: 
+`sc start jenkins`
+To stop Jenkins in CLI: 
+`sc stop Jenkins`
+Enable Jenkins: 
+`sc config Jenkins start= auto`
+Disable Jenkins:
+`sc config Jenkins start= disabled`
 
 #### 4. Exposing the Jenkins page for the webhook
 In order for our Jenkins to track GitHub `git push` events, a webhook must be set up to listen for these occurences. However, a webhook can not access a locally hosted page.  
@@ -115,4 +124,19 @@ Start with visiting the Jenkins dashboard.
 `copy reports\results.xml C:\path\to\your-local\repo\reports\
 ` -  Copies the test results to the reports/ directory in your Jenkins project. This is optional, but my project is optimized in accordance to certain needs.
 
-11. Configure the post-build behaviours. Under "Post-build Actions", click "Add" and select
+11. Configure the post-build behaviours. Under "Post-build Actions", click "Add" and select "E-mail notification": 
+![alt text](public/image-5.png)
+Here, you will provide recipient addresses that will be contacted each time a build has failed. Additionally, check the "Send e-mail for every unstable build" box and with this, your project configuration is done.
+*But, the setup is not done yet. Now, we need to configure Jenkins itself.*
+12. Go back to the Jenkins dashboard. Navigate to "Manage Jenkins" and locate the "Jenkins URL" and put your ngrok link inside that. Do not forget to end with a "/". This is important, because using ngrok, you will have to change this (along with the webhook link) each time the ngrok shuts down.
+13. Go back to the Jenkins dashboard. Navigate to "Manage Jenkins", scroll to the bottom and select the following features:
+![alt text](public/image-6.png)
+
+
+## Running Jenkins
+To run this project, navigate to it on the dashboard. Once inside the project, select "Build now", as no parameters were specified. This should return a successful build. The next step is to push something onto your remote repo on GitHub and trigger the webhook. If everything works, the build should trigger automatically and under the console log, it should say: 
+`Started by GitHub push by <github_name>`
+Or if you ran it by clicking the "Build now", the log will change accordingly, stating:
+`Started by user <name_of_user>`
+
+## Testing the application
