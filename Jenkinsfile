@@ -17,6 +17,7 @@ pipeline {
 
     post {
         always {
+            sh 'cp reports/test-results.xml $WORKSPACE/reports/'
             junit 'reports/test-results.xml'
         }
     }
