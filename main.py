@@ -1,5 +1,5 @@
-from functions.advanced_operations import power, sqrt, log
-from functions.basic_operations import add, subtract, multiply, divide
+from .functions.advanced_operations import power, sqrt, log
+from .functions.basic_operations import add, subtract, multiply, divide
 
 
 def main():

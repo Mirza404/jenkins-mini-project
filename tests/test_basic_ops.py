@@ -1,6 +1,6 @@
 # test_main.py
 
-from main import add, subtract, multiply, divide
+from functions.basic_operations import add, subtract, multiply, divide
 
 def test_add():
     assert add(1, 2) == 3
