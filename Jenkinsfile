@@ -11,8 +11,7 @@ pipeline {
             steps {
                 sh 'git pull origin main'
                 sh 'mkdir -p reports'  // Create the reports directory
-                sh 'pytest --junitxml=reports/test-results.xml'
-            }
+                sh 'pytest tests/ --junitxml=reports/test-results.xml'  // Run all tests inside ./tests/            }
         }
     }
 
