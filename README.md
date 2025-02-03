@@ -1,7 +1,6 @@
 # JENKINS MINI PROJECT - BASIC PYTHON CALCULATOR
 
 ## Introduction 
-<hr>
 A small project built in order to demonstrate and apply my understanding of version control using Git and automate testing workflows using Jenkins.
 
 
@@ -13,7 +12,6 @@ A small project built in order to demonstrate and apply my understanding of vers
 
 
 ## Project Setup
-<hr>
 To get started with this project, you need to have Python installed. Then, we will set up the project and Jenkins. Jenkins is a tool that will help us automate the building and testing on every git push, or even manually if needed.
 
 #### Python installation: 
@@ -140,5 +138,4 @@ Or if you ran it by clicking the "Build now", the log will change accordingly, s
 `Started by user <name_of_user>`
 
 ## Conclusion
-<hr>
 The project was for educational purposes only, hence the incredibly small codebase. The focus was demonstration of my understanding of version control using Git and testing automation using Jenkins, all of which were set up within this project.
