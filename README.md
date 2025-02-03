@@ -8,9 +8,7 @@ A small project built in order to demonstrate and apply my understanding of vers
 ## Table of Contents
 - [Introduction](#introduction)
 - [Project Setup](#project-setup)
-- [Running Jenkins](#running-jenkins)
-- [Testing the Application](#testing-the-application)
-- [Jenkins Integration](#jenkins-integration)
+- [Running the Application](#running-the-application)
 - [Conclusion](#conclusion)
 
 
@@ -27,6 +25,8 @@ Along with Python, pip will be installed for all versions 3.4 and above, so ther
 #### 1. Clone the repository to your local machine:
 We want to clone the repository locally: 
    `git clone https://github.com/Mirza404/jenkins-mini-project.git`
+Then, move to this folder by running
+`cd jenkins-mini-project`
 
 #### 2. Dependency installation:
    Run `pip install -r requirements.txt` to install dependencies within the `requirements.txt`.  
@@ -133,10 +133,12 @@ Here, you will provide recipient addresses that will be contacted each time a bu
 ![alt text](public/image-6.png)
 
 
-## Running Jenkins
+## Running the application
 To run this project, navigate to it on the dashboard. Once inside the project, select "Build now", as no parameters were specified. This should return a successful build. The next step is to push something onto your remote repo on GitHub and trigger the webhook. If everything works, the build should trigger automatically and under the console log, it should say: 
 `Started by GitHub push by <github_name>`
 Or if you ran it by clicking the "Build now", the log will change accordingly, stating:
 `Started by user <name_of_user>`
 
-## Testing the application
+## Conclusion
+<hr>
+The project was for educational purposes only, hence the incredibly small codebase. The focus was demonstration of my understanding of version control using Git and testing automation using Jenkins, all of which were set up within this project.
