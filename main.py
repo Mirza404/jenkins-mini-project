@@ -13,6 +13,7 @@ def main():
         print("6. Square Root")
         print("7. Logarithm")
         print("8. Exit")
+        #comment for testing
         
         choice = input("Enter choice (1/2/3/4/5/6/7/8): ")
         
