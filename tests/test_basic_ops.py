@@ -1,5 +1,3 @@
-# test_main.py
-
 from functions.basic_operations import add, subtract, multiply, divide
 
 def test_add():

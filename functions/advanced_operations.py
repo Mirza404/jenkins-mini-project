@@ -1,5 +1,3 @@
-# advanced_operations.py
-
 import math
 
 def power(a, b):
